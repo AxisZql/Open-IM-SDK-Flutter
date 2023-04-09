@@ -127,7 +127,7 @@ class SignalingCertificate {
   SignalingCertificate.fromJson(Map<String, dynamic> json) {
     token = json['token'];
     roomID = json['roomID'];
-    uid = json['Uid'];
+    uid = json['uid'];
     busyLineUserIDList = null == json['busyLineUserIDList']
         ? null
         : json['busyLineUserIDList'].cast<String>();
@@ -137,7 +137,7 @@ class SignalingCertificate {
     final data = Map<String, dynamic>();
     data['token'] = this.token;
     data['roomID'] = this.roomID;
-    data['Uid'] = this.uid;
+    data['uid'] = this.uid;
     data['busyLineUserIDList'] = this.busyLineUserIDList;
     return data;
   }
@@ -172,7 +172,7 @@ class RoomCallingInfo {
     }
     roomID = json['roomID'] ?? invitation?.roomID;
     token = json['token'];
-    uid = json['Uid'];
+    uid = json['uid'];
     groupID = json['groupID'];
   }
 
@@ -186,7 +186,7 @@ class RoomCallingInfo {
     }
     data['roomID'] = this.roomID;
     data['token'] = this.token;
-    data['Uid'] = this.uid;
+    data['uid'] = this.uid;
     data['groupID'] = this.groupID;
     return data;
   }
