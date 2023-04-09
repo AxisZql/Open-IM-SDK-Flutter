@@ -111,8 +111,8 @@ class SignalingCertificate {
   /// 房间id
   String? roomID;
 
-  /// 服务器地址
-  String? liveURL;
+  /// 触发服务的用户id的hash值
+  int? uid;
 
   /// 占线列表
   List<String>? busyLineUserIDList;
@@ -120,14 +120,14 @@ class SignalingCertificate {
   SignalingCertificate({
     this.token,
     this.roomID,
-    this.liveURL,
+    this.uid,
     this.busyLineUserIDList,
   });
 
   SignalingCertificate.fromJson(Map<String, dynamic> json) {
     token = json['token'];
     roomID = json['roomID'];
-    liveURL = json['liveURL'];
+    uid = json['uid'];
     busyLineUserIDList = null == json['busyLineUserIDList']
         ? null
         : json['busyLineUserIDList'].cast<String>();
@@ -137,7 +137,7 @@ class SignalingCertificate {
     final data = Map<String, dynamic>();
     data['token'] = this.token;
     data['roomID'] = this.roomID;
-    data['liveURL'] = this.liveURL;
+    data['uid'] = this.uid;
     data['busyLineUserIDList'] = this.busyLineUserIDList;
     return data;
   }
