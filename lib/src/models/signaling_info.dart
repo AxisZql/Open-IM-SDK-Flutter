@@ -127,7 +127,7 @@ class SignalingCertificate {
   SignalingCertificate.fromJson(Map<String, dynamic> json) {
     token = json['token'];
     roomID = json['roomID'];
-    uid = json['uid'];
+    uid = json['Uid'];
     busyLineUserIDList = null == json['busyLineUserIDList']
         ? null
         : json['busyLineUserIDList'].cast<String>();
@@ -137,7 +137,7 @@ class SignalingCertificate {
     final data = Map<String, dynamic>();
     data['token'] = this.token;
     data['roomID'] = this.roomID;
-    data['uid'] = this.uid;
+    data['Uid'] = this.uid;
     data['busyLineUserIDList'] = this.busyLineUserIDList;
     return data;
   }
@@ -148,7 +148,7 @@ class RoomCallingInfo {
   List<Participant>? participant;
   String? roomID;
   String? token;
-  String? liveURL;
+  int? uid;
   String? groupID;
 
   RoomCallingInfo({
@@ -156,7 +156,7 @@ class RoomCallingInfo {
     this.participant,
     this.roomID,
     this.token,
-    this.liveURL,
+    this.uid,
     this.groupID,
   });
 
@@ -172,7 +172,7 @@ class RoomCallingInfo {
     }
     roomID = json['roomID'] ?? invitation?.roomID;
     token = json['token'];
-    liveURL = json['liveURL'];
+    uid = json['Uid'];
     groupID = json['groupID'];
   }
 
@@ -186,7 +186,7 @@ class RoomCallingInfo {
     }
     data['roomID'] = this.roomID;
     data['token'] = this.token;
-    data['liveURL'] = this.liveURL;
+    data['Uid'] = this.uid;
     data['groupID'] = this.groupID;
     return data;
   }
